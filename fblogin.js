@@ -7,6 +7,7 @@ function statusChangeCallback(response) {
     })
     .then(function (response) {
       localStorage.setItem('token', response.data.token)
+      localStorage.setItem('id', response.data.id)
     })
     .catch(function (error) {
       console.log(error)
@@ -40,7 +41,7 @@ function checkLoginState() {
 
 window.fbAsyncInit = function() {
   FB.init({
-    appId      : '642268909442216',
+    appId      : '2132191533682407',
     cookie     : true,
     xfbml      : true,
     version    : 'v2.8'
