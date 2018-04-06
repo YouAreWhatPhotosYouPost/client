@@ -1,10 +1,10 @@
-function getNewQuote() {
+function getNewQuote(idImage, idMusic) {
 
     let quotes;    
     let author;
 
     $.ajax({
-        url: 'http://api.forismatic.com/api/1.0/',
+        url: 'https://api.forismatic.com/api/1.0/',
         jsonp: 'jsonp',
         dataType: 'jsonp',
         data: {
@@ -36,6 +36,21 @@ function getNewQuote() {
             axios.post('http://localhost:3000/quotes/save', objQuotes)
             .then(function(response) {
                 console.log('ini response', response)
+                console.log('id quotes', response.data.quotes._id)
+                let idQuote = response.data.quotes._id;
+                let userid = localStorage.getItem('id');
+                axios.post('http://localhost:3000/history', {
+                    image: idImage,
+                    music: idMusic,
+                    quote: idQuote,
+                    user: userid
+                })
+                .then(function (response) {
+                    console.log("berhasil masuk ke history--", response)
+                })
+                .catch(function (error) {
+                    console.log("error- ", error)
+                })
             })
             .catch(function(error) {
                 console.log('ini error', error)
