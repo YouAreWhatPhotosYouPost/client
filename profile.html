@@ -15,7 +15,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body id="top">
-<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');"> 
+<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.jpg');"> 
   <div class="wrapper row0">
     <div id="topbar" class="hoc clear"> 
       <div class="fl_left">
@@ -53,8 +53,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <div class="wrapper row3">
   <main class="hoc container clear"> 
         <div id="wrapper" style="width:1020px; display:table;">
-            <h3>Name :</h3>
-            <h3>Email :</h3>
+            <h3 id="userName">Name :</h3>
             <hr>
             <h3>Albums :</h3>
             <div id="albums">
@@ -77,5 +76,11 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
 <script src="layout/scripts/jquery.flexslider-min.js"></script>
 <script src="faceAnalyze.js"></script>
+<script src="albums.js"></script>
+<script>
+  console.log("masuk")
+  let name = localStorage.getItem("name");
+  $('#userName').text("Name: " + name);
+</script>
 </body>
 </html>

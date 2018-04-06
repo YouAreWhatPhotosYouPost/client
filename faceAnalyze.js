@@ -1,4 +1,5 @@
 function processImage() {
+    localStorage.removeItem("urlPhoto");
     var subscriptionKey = "b5eef236b27247f3b5e4c25b30948ca9";
     var uriBase = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
 
@@ -80,26 +81,26 @@ function processImage() {
         })
         .then(function (response) {
             console.log("response---", response)
+            let idImage = response.data.data._id
+            let arrEmotion = [];
+            for (var key in emotion) {
+                if (emotion.hasOwnProperty(key)) {
+                    arrEmotion.push([key, emotion[key]])
+                }
+            }
+            
+            let highestEmotion = arrEmotion[0]
+            console.log("***", highestEmotion)
+            for(let i in arrEmotion) {
+                if(arrEmotion[i][1] > highestEmotion[1]) {
+                    highestEmotion = arrEmotion[i];
+                }
+            }
+            showItunes(highestEmotion, idImage);
         })
         .catch(function (error) {
             console.log("error---", error)
         })
-
-        let arrEmotion = [];
-        for (var key in emotion) {
-            if (emotion.hasOwnProperty(key)) {
-                arrEmotion.push([key, emotion[key]])
-            }
-        }
-        
-        let highestEmotion = arrEmotion[0]
-        console.log("***", highestEmotion)
-        for(let i in arrEmotion) {
-            if(arrEmotion[i][1] > highestEmotion[1]) {
-                highestEmotion = arrEmotion[i];
-            }
-        }
-        showItunes(highestEmotion);
     })
     .fail(function(jqXHR, textStatus, errorThrown) {
         // Display error message.
