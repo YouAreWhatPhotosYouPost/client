@@ -445,6 +445,18 @@ table a, #comments a{background-color:inherit;}
 	text-decoration: none;
 }
 
+
+/* Quotes
+--------------------------------------------------------------------------------------------------------------- */
+
+#quoteText {
+	font-style: normal;
+}
+
+#quoteAuthor {
+	font-style: italic;
+}
+
 /* Form History
 --------------------------------------------------------------------------------------------------------------- */
 #historyContainer {
@@ -502,4 +514,3 @@ table a, #comments a{background-color:inherit;}
 	margin: 5px;
 	/* padding: px; */
 }
-

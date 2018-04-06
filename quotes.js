@@ -23,8 +23,8 @@ function getNewQuote() {
                 author = '~' + " " + response.quoteAuthor
             }
 
-            $('h2').text(quotes)
-            $('h4').text(author)
+            $('#quoteText').text(quotes)
+            $('#quoteAuthor').text(author)
 
             console.log(response);
 
