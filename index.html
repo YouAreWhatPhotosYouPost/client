@@ -22,7 +22,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <body id="top">
 <div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.jpg');"> 
   <div class="wrapper row0">
-    <div id="topbar" class="hoc clear"> 
+    <div id="topbar" class="hoc clear">
       <div class="fl_left">
         <ul>
           <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
@@ -33,7 +33,7 @@ Licence URI: http://www.os-templates.com/template-terms
         <ul>
           <li><fb:login-button id="fbLogin" scope="public_profile, email" onlogin="checkLoginState();">
             </fb:login-button></li>
-          <li><a href='#'id="fbLogout" onclick="fbLogout()">logout</a></li>
+          <li><a href='#' id="fbLogout" onclick="fbLogout()">logout</a></li>
           <li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
       </div>
     </div>
@@ -41,6 +41,7 @@ Licence URI: http://www.os-templates.com/template-terms
 
   <div class="wrapper row1">
     <header id="header" class="hoc clear">
+
       <div id="logo" class="fl_left">
         <h1><a href="index.html">You Are What Photos You Post</a></h1>
       </div>
@@ -48,13 +49,13 @@ Licence URI: http://www.os-templates.com/template-terms
         <ul class="clear">
           <li class="active"><a href="index.html">Home</a></li>
           <li><a href="profile.html" id="btnProfile">Profile</a></li>
-          <li><a href="#" id="btnHistory">History</a></li>
+          <li><a href="history.html" id="btnHistory">History</a></li>
         </ul>
       </nav>
     </header>
   </div>
 
-  <div id="pageintro" class="hoc clear"> 
+  <div id="pageintro" class="hoc clear">
     <div class="flexslider basicslider">
       <ul class="slides">
         <li>
@@ -67,7 +68,8 @@ Licence URI: http://www.os-templates.com/template-terms
                   <button id="btnAnalyze" onclick="processImage()">Analyze face</button>
             </footer>
             <br/>
-            <button id="processImage" class="fa fa-sign-in" title="Submit" onclick="processImage()"><em style="color:black">Submit</em></button>
+            <button id="processImage" class="fa fa-sign-in" title="Submit" onclick="processImage();getNewQuote()"><em style="color:black">Submit</em></button>
+            <!-- <button id="quotes"><em style="color:black">Get Quotes</em></button> -->
           </article>
         </li>
       </ul>
@@ -84,14 +86,22 @@ Licence URI: http://www.os-templates.com/template-terms
           </div>
           <div id="emotionList"></div>
           <h3>Recomendation Songs For You:</h3>
+
           <div id="songRecomendationList"></div>
+
+          <div id="quotes">
+            <h3>Your Daily Quotes:</h3>
+            <p id="quoteText"></p>
+            <p id="quoteAuthor"></p>
+          </div>
+    
       </div>
     <div class="clear"></div>
   </main>
 </div>
 
 <div class="wrapper row5">
-  <div id="copyright" class="hoc clear"> 
+  <div id="copyright" class="hoc clear">
     <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="#">YouAreWhatPhotosYouPost</a></p>
     <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
   </div>
@@ -117,5 +127,6 @@ Licence URI: http://www.os-templates.com/template-terms
       }
     }
   </script>
+<script src="quotes.js"></script>
 </body>
 </html>
