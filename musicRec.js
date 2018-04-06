@@ -1,4 +1,4 @@
-function showItunes(highestEmotion){
+function showItunes(highestEmotion, idImage){
   $('#songRecomendationList').empty();
   //nanti genreId sesuai data emotions: Schema.Types.Mixed,
   //let emotions =
@@ -110,7 +110,20 @@ function showItunes(highestEmotion){
       itunesRec
     })
     .then(function (response) {
+      let idMusic = response.data.musicRec._id;
       console.log("response- ", response)
+      console.log("id music: ", idMusic)
+      console.log("id image: ", idImage)
+      axios.post('http://localhost:3000/history', {
+        image: idImage,
+        music: idMusic
+      })
+      .then(function (response) {
+        console.log("berhasil masuk ke history--", response)
+      })
+      .catch(function (error) {
+        console.log("error- ", error)
+      })
     })
     .catch(function (error) {
       console.log("error- ", error)

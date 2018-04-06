@@ -15,6 +15,8 @@ function statusChangeCallback(response) {
     document.querySelector('#fbLogout').style.display="block"
     document.querySelector('#processImage').style.display="block"
     document.querySelector('#fbLogin').style.display="none"
+    document.querySelector('#btnProfile').style.display="block"
+    document.querySelector('#btnHistory').style.display="block"
     $('#inputImage').attr('readonly', false)
     // testAPI()
   } else {
@@ -23,6 +25,8 @@ function statusChangeCallback(response) {
     document.querySelector('#fbLogout').style.display="none"
     document.querySelector('#processImage').style.display="none"
     document.querySelector('#fbLogin').style.display="block"
+    document.querySelector('#btnProfile').style.display="none"
+    document.querySelector('#btnHistory').style.display="none"
     $('#inputImage').attr('readonly', true)
   }
 }

@@ -20,7 +20,7 @@ Licence URI: http://www.os-templates.com/template-terms
 
 </head>
 <body id="top">
-<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');"> 
+<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.jpg');"> 
   <div class="wrapper row0">
     <div id="topbar" class="hoc clear"> 
       <div class="fl_left">
@@ -47,8 +47,8 @@ Licence URI: http://www.os-templates.com/template-terms
       <nav id="mainav" class="fl_right">
         <ul class="clear">
           <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="profile.html">Profile</a></li>
-          <li><a href="#">History</a></li>
+          <li><a href="profile.html" id="btnProfile">Profile</a></li>
+          <li><a href="#" id="btnHistory">History</a></li>
         </ul>
       </nav>
     </header>
@@ -63,11 +63,11 @@ Licence URI: http://www.os-templates.com/template-terms
             <h3 class="heading">Enter URL Image: </h3>
             <p></p>
             <footer>
-                  <input type="text" name="inputImage" id="inputImage" value="" placeholder="url photo&hellip;">
+                  <input type="text" name="inputImage" id="inputImage" placeholder="url photo&hellip;">
                   <button id="btnAnalyze" onclick="processImage()">Analyze face</button>
             </footer>
             <br/>
-            <button class="fa fa-sign-in" title="Submit" onclick="processImage()"><em style="color:black">Submit</em></button>
+            <button id="processImage" class="fa fa-sign-in" title="Submit" onclick="processImage()"><em style="color:black">Submit</em></button>
           </article>
         </li>
       </ul>
@@ -98,11 +98,24 @@ Licence URI: http://www.os-templates.com/template-terms
 </div>
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
+<script src="albums.js"></script>
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
 <script src="layout/scripts/jquery.flexslider-min.js"></script>
 <script src="faceAnalyze.js"></script>
 <script src="musicRec.js"></script>
+<script src="fblogin.js"></script>
+<script>
+    checkUrlPhoto()
+    function checkUrlPhoto() {
+      let urlPhoto = localStorage.getItem("urlPhoto");
+      console.log("dari local storage--", urlPhoto)
+      if(urlPhoto) {
+        $('#inputImage').val(urlPhoto);
+        $("#btnAnalyze").click();
+      }
+    }
+  </script>
 </body>
 </html>
