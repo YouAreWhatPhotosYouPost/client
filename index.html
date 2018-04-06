@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+Template Name: Maxisonix
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>YouAreWhatPhotosYouPost</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+</head>
+<body id="top">
+<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.jpg');"> 
+  <div class="wrapper row0">
+    <div id="topbar" class="hoc clear">
+      <div class="fl_left">
+        <ul>
+          <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
+          <li><i class="fa fa-envelope-o"></i> www.facebook.com/yawpp.hacktiv.3</li>
+        </ul>
+      </div>
+      <div class="fl_right">
+        <ul>
+          <li><fb:login-button id="fbLogin" scope="public_profile, email" onlogin="checkLoginState();">
+            </fb:login-button></li>
+          <li><a href='#' id="fbLogout" onclick="fbLogout()">logout</a></li>
+          <li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear">
+
+      <div id="logo" class="fl_left">
+        <h1><a href="index.html">You Are What Photos You Post</a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="profile.html" id="btnProfile">Profile</a></li>
+          <li><a href="history.html" id="btnHistory">History</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <div id="pageintro" class="hoc clear">
+    <div class="flexslider basicslider">
+      <ul class="slides">
+        <li>
+          <article>
+            <p></p>
+            <h3 class="heading">Enter URL Image: </h3>
+            <p></p>
+            <footer>
+                  <input type="text" name="inputImage" id="inputImage" placeholder="url photo&hellip;">
+                  <button id="btnAnalyze" onclick="processImage()">Analyze face</button>
+            </footer>
+            <br/>
+            <button id="processImage" class="fa fa-sign-in" title="Submit" onclick="processImage();getNewQuote()"><em style="color:black">Submit</em></button>
+            <!-- <button id="quotes"><em style="color:black">Get Quotes</em></button> -->
+          </article>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper row3">
+  <main class="hoc container clear">
+      <div id="wrapper" style="width:1020px; display:table;">
+          <div id="imageDiv" style="width:420px;">
+            <h3>Image:</h3>
+            <img id="sourceImage" width="400" />
+          </div>
+          <div id="emotionList"></div>
+          <h3>Recomendation Songs For You:</h3>
+
+          <div id="songRecomendationList"></div>
+
+          <div id="quotes">
+            <h3>Your Daily Quotes:</h3>
+            <p id="quoteText"></p>
+            <p id="quoteAuthor"></p>
+          </div>
+    
+      </div>
+    <div class="clear"></div>
+  </main>
+</div>
+
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear">
+    <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="#">YouAreWhatPhotosYouPost</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="albums.js"></script>
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+<script src="layout/scripts/jquery.flexslider-min.js"></script>
+<script src="faceAnalyze.js"></script>
+<script src="musicRec.js"></script>
+<script src="quotes.js"></script>
+<script src="fblogin.js"></script>
+<script>
+    checkUrlPhoto()
+    function checkUrlPhoto() {
+      let urlPhoto = localStorage.getItem("urlPhoto");
+      console.log("dari local storage--", urlPhoto)
+      if(urlPhoto) {
+        $('#inputImage').val(urlPhoto);
+        $("#btnAnalyze").click();
+      }
+    }
+  </script>
+<script src="quotes.js"></script>
+</body>
+</html>
