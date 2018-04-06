@@ -13,6 +13,11 @@ Licence URI: http://www.os-templates.com/template-terms
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
 </head>
 <body id="top">
 <div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');">
@@ -26,10 +31,10 @@ Licence URI: http://www.os-templates.com/template-terms
       </div>
       <div class="fl_right">
         <ul>
+          <li><fb:login-button id="fbLogin" scope="public_profile, email" onlogin="checkLoginState();">
+            </fb:login-button></li>
+          <li><a href='#' id="fbLogout" onclick="fbLogout()">logout</a></li>
           <li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Register</a></li>
-        </ul>
       </div>
     </div>
   </div>
@@ -45,6 +50,7 @@ Licence URI: http://www.os-templates.com/template-terms
           <li class="active"><a href="index.html">Home</a></li>
           <li><a href="profile.html">Profile</a></li>
           <li><a href="history.html">History</a></li>
+
         </ul>
       </nav>
     </header>
@@ -63,7 +69,7 @@ Licence URI: http://www.os-templates.com/template-terms
                   <button id="btnAnalyze" onclick="processImage()">Analyze face</button>
             </footer>
             <br/>
-            <button class="fa fa-sign-in" title="Submit" onclick="processImage()"><em>Submit</em></button>
+            <button id="processImage" class="fa fa-sign-in" title="Submit" onclick="processImage()"><em style="color:black">Submit</em></button>
           </article>
         </li>
       </ul>
@@ -79,7 +85,8 @@ Licence URI: http://www.os-templates.com/template-terms
             <img id="sourceImage" width="400" />
           </div>
           <div id="emotionList"></div>
-          <button onclick="return showItunes()">Show Itunes</button>
+          <h3>Recomendation Songs For You:</h3>
+
           <div id="songRecomendationList"></div>
       </div>
     <div class="clear"></div>
@@ -100,5 +107,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="layout/scripts/jquery.flexslider-min.js"></script>
 <script src="faceAnalyze.js"></script>
 <script src="musicRec.js"></script>
+<script src="fblogin.js"></script>
+
 </body>
 </html>

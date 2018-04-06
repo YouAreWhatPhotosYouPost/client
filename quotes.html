@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quotes</title>
+</head>
+<body>
+    
+    <h2></h2>
+    <h4></h4>
+    <input class="quotes" type="button" value="Get Quotes!">
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="quotes.js"></script>
+    <script>
+        
+        $('.quotes').on('click', function() {
+            getNewQuote();
+            showQuotes();
+        })
+
+
+    </script>
+       
+</body>
+</html>

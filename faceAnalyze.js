@@ -84,6 +84,22 @@ function processImage() {
         .catch(function (error) {
             console.log("error---", error)
         })
+
+        let arrEmotion = [];
+        for (var key in emotion) {
+            if (emotion.hasOwnProperty(key)) {
+                arrEmotion.push([key, emotion[key]])
+            }
+        }
+        
+        let highestEmotion = arrEmotion[0]
+        console.log("***", highestEmotion)
+        for(let i in arrEmotion) {
+            if(arrEmotion[i][1] > highestEmotion[1]) {
+                highestEmotion = arrEmotion[i];
+            }
+        }
+        showItunes(highestEmotion);
     })
     .fail(function(jqXHR, textStatus, errorThrown) {
         // Display error message.
