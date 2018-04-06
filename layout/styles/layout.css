@@ -444,3 +444,62 @@ table a, #comments a{background-color:inherit;}
 #songRecomendationList a{
 	text-decoration: none;
 }
+
+/* Form History
+--------------------------------------------------------------------------------------------------------------- */
+#historyContainer {
+	text-align: center;
+	width: 710px;
+}
+
+#historyContainer table{
+	width: 670px;
+}
+
+#historyContainer th, td {
+	width: 100px;
+}
+
+#historyContainer a{
+	text-decoration: none;
+}
+
+.historyContent {
+	width: 720px;
+	height: auto;
+	margin: 10px;
+	padding: 20px;
+	border: 1px solid black;
+	text-align: left;
+}
+
+.historyImagesTable {
+	width: 680px;
+	height: auto;
+
+	margin-bottom: 15px;
+	border: 1px solid black;
+}
+
+.historyImages {
+	text-align: center;
+	max-width: 400px;
+	height: auto;
+	margin-bottom: 15px;
+	border: 1px solid black;
+}
+
+.historyQuotes, .historyMusic{
+	width: 680px;
+	height: auto;
+	margin-bottom: 15px;
+	border: 1px solid black;
+}
+
+
+.music {
+	border: 1px solid black;
+	margin: 5px;
+	/* padding: px; */
+}
+

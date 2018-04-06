@@ -1,3 +1,4 @@
+
 function showItunes(highestEmotion){
   $('#songRecomendationList').empty();
   //nanti genreId sesuai data emotions: Schema.Types.Mixed,
@@ -33,6 +34,7 @@ function showItunes(highestEmotion){
   }
 
   console.log("masuk ke seneh", genreId)
+
 
   //API url untuk search Lagu berdasarkan genre
   let apiUrl = `https://itunes.apple.com/search?term=genre&genreId=${genreId}&limit=9`;
