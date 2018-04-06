@@ -1,35 +1,38 @@
-function showItunes(){
+function showItunes(highestEmotion){
+  $('#songRecomendationList').empty();
   //nanti genreId sesuai data emotions: Schema.Types.Mixed,
   //let emotions =
   let genreId = 14; //defaultnya pop
-  // switch (emotions) {
-  //   case 'anger':
-  //     genreId = 1153; //grnre metal
-  //     break;
-  //   case 'contempt':
-  //     genreId = 20; //grnre Alternative
-  //     break;
-  //   case 'disgust':
-  //     genreId = 21; //grnre Rock
-  //     break;
-  //   case 'fear':
-  //     genreId = 8; //grnre Holiday
-  //     break;
-  //   case 'happiness':
-  //     genreId = 17; //grnre Dance
-  //     break;
-  //   case 'neutral':
-  //     genreId = 25; //grnre Easy Listening
-  //     break;
-  //   case 'sadness':
-  //     genreId = 16; //grnre soundtrack
-  //     break;
-  //   case 'surprise':
-  //     genreId = 13; //grnre New Age
-  //     break;
-  //   default:
-  //     genreId = 51
-  // }
+  switch (highestEmotion[0]) {
+    case 'anger':
+      genreId = 1153; //grnre metal
+      break;
+    case 'contempt':
+      genreId = 20; //grnre Alternative
+      break;
+    case 'disgust':
+      genreId = 21; //grnre Rock
+      break;
+    case 'fear':
+      genreId = 8; //grnre Holiday
+      break;
+    case 'happiness':
+      genreId = 17; //grnre Dance
+      break;
+    case 'neutral':
+      genreId = 25; //grnre Easy Listening
+      break;
+    case 'sadness':
+      genreId = 16; //grnre soundtrack
+      break;
+    case 'surprise':
+      genreId = 13; //grnre New Age
+      break;
+    default:
+      genreId = 51
+  }
+
+  console.log("masuk ke seneh", genreId)
 
   //API url untuk search Lagu berdasarkan genre
   let apiUrl = `https://itunes.apple.com/search?term=genre&genreId=${genreId}&limit=9`;
