@@ -444,3 +444,15 @@ table a, #comments a{background-color:inherit;}
 #songRecomendationList a{
 	text-decoration: none;
 }
+
+
+/* Quotes
+--------------------------------------------------------------------------------------------------------------- */
+
+#quoteText {
+	font-style: normal;
+}
+
+#quoteAuthor {
+	font-style: italic;
+}
