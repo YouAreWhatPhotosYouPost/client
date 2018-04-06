@@ -33,7 +33,7 @@ Licence URI: http://www.os-templates.com/template-terms
         <ul>
           <li><fb:login-button id="fbLogin" scope="public_profile, email" onlogin="checkLoginState();">
             </fb:login-button></li>
-          <li><a href='#'id="fbLogout" onclick="fbLogout()">logout</a></li>
+          <li><a href='#' id="fbLogout" onclick="fbLogout()">logout</a></li>
           <li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
       </div>
     </div>
@@ -67,7 +67,7 @@ Licence URI: http://www.os-templates.com/template-terms
                   <button id="btnAnalyze" onclick="processImage()">Analyze face</button>
             </footer>
             <br/>
-            <button class="fa fa-sign-in" title="Submit" onclick="processImage()"><em style="color:black">Submit</em></button>
+            <button id="processImage" class="fa fa-sign-in" title="Submit" onclick="processImage()"><em style="color:black">Submit</em></button>
           </article>
         </li>
       </ul>
@@ -104,5 +104,6 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="layout/scripts/jquery.flexslider-min.js"></script>
 <script src="faceAnalyze.js"></script>
 <script src="musicRec.js"></script>
+<script src="fblogin.js"></script>
 </body>
 </html>
