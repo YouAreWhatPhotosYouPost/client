@@ -42,15 +42,14 @@ Licence URI: http://www.os-templates.com/template-terms
   </div>
 
   <div class="wrapper row1">
-    <header id="header" class="hoc clear"> 
-    
+    <header id="header" class="hoc clear">
       <div id="logo" class="fl_left">
         <h1><a href="index.html">You Are What Photos You Post</a></h1>
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
           <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="#">Profile</a></li>
+          <li><a href="profile.html">Profile</a></li>
           <li><a href="#">History</a></li>
         </ul>
       </nav>
@@ -67,7 +66,7 @@ Licence URI: http://www.os-templates.com/template-terms
             <p></p>
             <footer>
                   <input type="text" name="inputImage" id="inputImage" value="" placeholder="url photo&hellip;">
-                  <button onclick="processImage()">Analyze face</button>
+                  <button id="btnAnalyze" onclick="processImage()">Analyze face</button>
             </footer>
             <br/>
             <button class="fa fa-sign-in" title="Submit" onclick="processImage()"><em style="color:black">Submit</em></button>
@@ -79,13 +78,14 @@ Licence URI: http://www.os-templates.com/template-terms
 </div>
 
 <div class="wrapper row3">
-  <main class="hoc container clear"> 
+  <main class="hoc container clear">
       <div id="wrapper" style="width:1020px; display:table;">
           <div id="imageDiv" style="width:420px;">
             <h3>Image:</h3>
             <img id="sourceImage" width="400" />
           </div>
           <div id="emotionList"></div>
+          <button onclick="return showItunes()">Show Itunes</button>
           <div id="songRecomendationList"></div>
       </div>
     <div class="clear"></div>
@@ -105,6 +105,6 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
 <script src="layout/scripts/jquery.flexslider-min.js"></script>
 <script src="faceAnalyze.js"></script>
-<script src="fblogin.js"></script>
+<script src="musicRec.js"></script>
 </body>
 </html>
